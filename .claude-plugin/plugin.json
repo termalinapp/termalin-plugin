@@ -1,7 +1,7 @@
 {
   "name": "termalin",
   "displayName": "Termalin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SSH, SFTP, databases and monitoring for your own servers from Claude: skills that teach Claude how to check server health, triage alerts, run commands safely, verify deployments and query databases through the Termalin connector.",
   "author": {
     "name": "Termalin",

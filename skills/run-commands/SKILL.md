@@ -21,7 +21,7 @@ Termalin runs each command on the user's own server through their Connector, aut
 ## What not to do without an explicit yes
 
 - Anything destructive or hard to undo: `rm -rf`, `dd`, disk formatting, `DROP`, `git push --force`, `reboot`, `shutdown`, firewall changes that could lock the user out, `apt-get remove` of a running stack, changing `sshd_config` or the Connector's own service.
-- Reading or printing secrets: `.env` files, private keys, `/etc/shadow`, password fields in configs, tokens in logs. If a task needs a value from such a file, read the one key with `grep -E '^KEY=' file | cut -d= -f2 | sed 's/./*/g'` style masking, or ask the user to provide it.
+- Printing secrets into the chat: environment files, private keys, `/etc/shadow`, password fields in configs, tokens in logs. If a task needs such a value, ask the user to provide it or to set it on the server themselves; never copy it into the conversation.
 - Interactive commands (`vim`, `top` without `-bn1`, `less`, `apt` prompts): use non-interactive flags (`-y`, `DEBIAN_FRONTEND=noninteractive`, `--no-pager`).
 - Guessing paths and unit names: look first (`ls`, `systemctl list-units | grep`), then act.
 

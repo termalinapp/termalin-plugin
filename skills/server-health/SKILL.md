@@ -6,8 +6,8 @@ description: Answer "how are my servers doing", "is everything up", "anything wr
 Answer health questions from the data Termalin already collects, not by running commands.
 
 1. Call `alerts_list` first. Open alerts are the headline: say what is wrong, on which server, since when.
-2. Call `server_metrics` (no `host` for all servers, default 6 hours; pass `hours` if the user names a period). It returns per-server CPU, load, memory, disk per mount, failed systemd units, listening ports, certificate expiry and offline state.
-3. If the user asks about one server, pass its name or id from `hosts_list`.
+2. Call `server_metrics` (no `host` for all servers, default 6 hours; set `hours` when the user names a period). It returns per-server CPU, load, memory, disk per mount, failed systemd units, listening ports, certificate expiry and offline state.
+3. If the user asks about one server, give its name or id from `hosts_list`.
 
 How to report:
 

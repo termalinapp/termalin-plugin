@@ -1,0 +1,15 @@
+{
+  "name": "termalin",
+  "owner": {
+    "name": "Termalin",
+    "email": "support@termal.in"
+  },
+  "plugins": [
+    {
+      "name": "termalin",
+      "source": "./",
+      "description": "SSH, SFTP, databases and monitoring for your own servers through the Termalin connector."
+    }
+  ],
+  "description": "Termalin: SSH, SFTP, databases and monitoring for your own servers from Claude."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "termalin",
+  "displayName": "Termalin",
+  "version": "1.0.0",
+  "description": "SSH, SFTP, databases and monitoring for your own servers from Claude: skills that teach Claude how to check server health, triage alerts, run commands safely, verify deployments and query databases through the Termalin connector.",
+  "author": {
+    "name": "Termalin",
+    "email": "support@termal.in",
+    "url": "https://termal.in"
+  },
+  "homepage": "https://termal.in/claude-ssh/",
+  "repository": "https://github.com/wolfhound1995/termalin-plugin",
+  "license": "MIT",
+  "keywords": [
+    "ssh",
+    "servers",
+    "vps",
+    "linux",
+    "devops",
+    "sysadmin",
+    "sftp",
+    "monitoring",
+    "alerts",
+    "database",
+    "postgres",
+    "mysql",
+    "docker",
+    "nginx",
+    "logs",
+    "deploy"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://termal.in/docs/",
+  "supportUrl": "https://termal.in/support/",
+  "privacyPolicyUrl": "https://termal.in/privacy",
+  "termsOfServiceUrl": "https://termal.in/terms"
+}

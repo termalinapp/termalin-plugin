@@ -1,12 +1,14 @@
 #!/bin/sh
-# Builds the ChatGPT plugin package (termalin-chatgpt-plugin.zip): this
-# folder's manifest and app link plus the same skills/ and assets/ the
-# Claude plugin ships, so the two never drift apart.
+# Builds the ChatGPT plugin package (termalin-chatgpt-plugin.zip) in the layout
+# OpenAI's own plugins use: .codex-plugin/plugin.json and the MCP server
+# (.mcp.json), plus the same skills/ and
+# assets/ the Claude plugin ships, so the two never drift apart.
 set -e
 cd "$(dirname "$0")"
 out=build/termalin
-rm -rf build && mkdir -p "$out"
-cp plugin.json .app.json "$out/"
+rm -rf build && mkdir -p "$out/.codex-plugin"
+cp .codex-plugin/plugin.json "$out/.codex-plugin/"
+cp .mcp.json "$out/"
 cp -r ../skills ../assets "$out/"
 ( cd build/termalin && python -c "import zipfile,os
 z=zipfile.ZipFile('../termalin-chatgpt-plugin.zip','w',zipfile.ZIP_DEFLATED)

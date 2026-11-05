@@ -1,0 +1,55 @@
+{
+  "name": "app-6aa2c81fc7c48191a06e101858e41837",
+  "version": "2.1.7",
+  "description": "SSH, SFTP, databases, monitoring and backups for your own servers from ChatGPT, keyless through the Termalin Connector, with skills for checking server health, triaging alerts, running commands safely, verifying deployments and querying databases.",
+  "author": {
+    "name": "Termalin",
+    "email": "support@termal.in",
+    "url": "https://termal.in"
+  },
+  "homepage": "https://termal.in/chatgpt-ssh/",
+  "repository": "https://github.com/termalinapp/termalin-plugin",
+  "license": "MIT",
+  "keywords": [
+    "ssh",
+    "servers",
+    "vps",
+    "linux",
+    "devops",
+    "sysadmin",
+    "sftp",
+    "monitoring",
+    "alerts",
+    "database",
+    "docker",
+    "logs",
+    "deploy"
+  ],
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Termalin",
+    "shortDescription": "SSH to your servers from chat",
+    "longDescription": "SSH access to your servers from ChatGPT: run commands, read and write files over SFTP, query databases and watch server health — on the Linux servers, VPS and cloud machines you connected. You never paste an SSH private key or password into ChatGPT.\n\nAsk ChatGPT to check disk space and memory, tail a log, restart a service, edit a config, install a package, run a migration in the background, or run one command on several servers at once. It can list tables and run queries on Postgres, MySQL and other databases through the same path, and it can read the metrics and alerts Termalin's monitoring collects — CPU, memory, disk, load, failed services, certificates — so \"how are my servers doing?\" is answered from data.\n\nHow access works: your servers connect outward through Termalin Connectors (a one-line install, no open inbound port). Each command is authenticated with a short-lived certificate, and ChatGPT gets access through OAuth from your termal.in account, after you approve it on a consent screen. Your SSH keys, passwords and tokens stay on your side; the chat only receives command output.\n\nYou stay in control: per-connection policy (full access, an allowlist of commands, or read-only), a note on each server telling the AI what to be careful with, a full audit trail of every command, and one-click disconnect from your account page. Works alongside the Termalin desktop app (Windows, macOS, Linux), the iOS app and the web cabinet, but needs none of them to be open.\n\nTo get started, sign in at termal.in and install a Connector on a server (one command): https://termal.in/account",
+    "developerName": "Termalin",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Run commands over SSH",
+      "Read and write files over SFTP",
+      "Query databases",
+      "Read server metrics and alerts",
+      "Run background jobs"
+    ],
+    "websiteURL": "https://termal.in",
+    "supportURL": "https://termal.in/support",
+    "privacyPolicyURL": "https://termal.in/privacy",
+    "termsOfServiceURL": "https://termal.in/terms",
+    "defaultPrompt": [
+      "How are my servers doing?",
+      "Why is my site slow? Check the server and the logs.",
+      "I just deployed. Check that everything on the server is fine."
+    ],
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

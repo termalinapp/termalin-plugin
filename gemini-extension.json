@@ -1,0 +1,11 @@
+{
+  "name": "termalin",
+  "version": "1.1.0",
+  "description": "SSH, SFTP, databases and monitoring for your own servers through the Termalin connector: run commands, edit files, query databases and read metrics on the servers you connected, without handing an SSH key to the agent.",
+  "mcpServers": {
+    "termalin": {
+      "httpUrl": "https://termal.in/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

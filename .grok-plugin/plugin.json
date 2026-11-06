@@ -1,0 +1,15 @@
+{
+  "name": "termalin",
+  "version": "1.1.0",
+  "description": "SSH, SFTP, databases and monitoring for your own servers from Grok Build via the hosted Termalin MCP server at termal.in/mcp. Run commands, read and write files, query databases, read metrics and alerts and run background jobs on the Linux servers you connected, without handing an SSH key to the agent. Sign in with your Termalin account on first connect.",
+  "author": {
+    "name": "Termalin",
+    "email": "support@termal.in",
+    "url": "https://termal.in"
+  },
+  "homepage": "https://termal.in/mcp/",
+  "repository": "https://github.com/termalinapp/termalin-plugin",
+  "license": "MIT",
+  "keywords": ["termalin", "termal.in", "termalin ssh", "termalin mcp"],
+  "logo": "assets/icon.png"
+}

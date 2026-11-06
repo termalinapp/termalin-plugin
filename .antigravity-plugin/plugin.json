@@ -1,0 +1,22 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "termalin",
+  "displayName": "Termalin",
+  "description": "SSH, SFTP, databases and monitoring for your own servers: run commands, edit files, query databases and read metrics on the servers you connected, without pasting an SSH key into the agent.",
+  "version": "1.1.0",
+  "logo": "assets/icon.png",
+  "suggestedPrompts": [
+    "How are my servers doing?",
+    "Why is my site slow? Check the server and the logs.",
+    "I just deployed. Check that everything on the server is fine."
+  ],
+  "author": {
+    "name": "Termalin",
+    "email": "support@termal.in",
+    "url": "https://termal.in"
+  },
+  "homepage": "https://termal.in/mcp/",
+  "repository": "https://github.com/termalinapp/termalin-plugin",
+  "license": "MIT",
+  "keywords": ["termalin", "ssh", "servers", "vps", "linux", "devops", "sftp", "monitoring", "database", "deploy"]
+}

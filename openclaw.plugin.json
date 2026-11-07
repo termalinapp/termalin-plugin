@@ -1,0 +1,17 @@
+{
+  "id": "termalin",
+  "name": "Termalin",
+  "description": "SSH, SFTP, databases and monitoring for your own Linux servers through Termalin's hosted MCP server: run commands and background jobs, read and write files, query databases, read metrics, alerts and pending security updates, without handing the agent an SSH key. OAuth sign-in, per-server command policy, audit log. 23 tools plus five skills.",
+  "version": "1.1.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "mcpServers": {
+    "termalin": {
+      "url": "https://termal.in/mcp",
+      "transport": "streamable-http"
+    }
+  }
+}

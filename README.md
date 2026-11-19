@@ -14,7 +14,7 @@ This plugin bundles the Termalin MCP connector (`https://termal.in/mcp`) with fi
 
 ## Use it
 
-1. Sign in at [termal.in](https://termal.in/account) and install a Connector on a server (one command, no inbound port). The Free plan is enough to try it.
+1. Sign in at [termal.in](https://termal.in/account) and install a Connector on a server (one command, no inbound port). The Connector is part of Pro; a new account gets a 14-day Pro trial, no card needed.
 2. Add this plugin, then connect the Termalin connector from the plugin's **Connectors** tab and approve access on the consent screen.
 3. Ask Claude: "Are all my servers online?", "Check disk space on prod", "Tail the nginx error log and explain the errors", "What's in the orders table?", "I just deployed the API, is it fine?".
 

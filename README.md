@@ -11,6 +11,11 @@ This plugin bundles the Termalin MCP connector (`https://termal.in/mcp`) with fi
 | `run-commands` | The rules for running commands and editing files safely: bounded output, background jobs for long tasks, backups before config edits, no secrets in the chat, no destructive commands without a yes. |
 | `deploy-check` | Verifies a server after a deployment: services, ports, logs, external response, certificate, metrics. |
 | `database-access` | Explores and queries Postgres, MySQL/MariaDB, Redis, MongoDB and SQLite on a server, read-only by default. |
+| `backups` | Checks that a server is backed up, proposes an encrypted backup job for folders and databases (the owner confirms it), and backs up right before a risky change. |
+| `security-updates` | Lists pending updates and known vulnerabilities (CVEs), plans the update with you, installs it as a background job and checks what is left. |
+| `server-setup` | Prepares a fresh VPS step by step: updates, a sudo user, SSH settings, firewall, swap, Docker, HTTPS. |
+| `internal-sites` | Opens Grafana, Portainer or any service on localhost from your Termalin account, without opening a port. |
+| `remote-desktop` | Works on Windows (RDP) and Linux or Mac (VNC) desktops you open for AI: screenshot, click, type, one step at a time, never typing passwords. |
 
 ## Use it
 

@@ -1,6 +1,6 @@
 # Termalin plugin
 
-Manage your own Linux servers from a conversation with Claude, ChatGPT, Cursor, Kiro, Grok Build, Gemini CLI or Antigravity: run commands over SSH, read and write files over SFTP, query databases, and watch server health and alerts — through the [Termalin](https://termal.in) connector, without pasting an SSH key or a password into the chat.
+Manage your own Linux servers from a conversation with Claude, ChatGPT, Cursor, Kiro, Grok Build, Gemini CLI, Antigravity or Hermes Agent: run commands over SSH, read and write files over SFTP, query databases, and watch server health and alerts — through the [Termalin](https://termal.in) connector, without pasting an SSH key or a password into the chat.
 
 This plugin bundles the Termalin MCP connector (`https://termal.in/mcp`) with five skills that teach the agent how to use it well:
 
@@ -32,8 +32,39 @@ The same repository carries a manifest for each plugin format, so one install wo
 | Cursor, Kiro and other [Agent Plugins](https://agent-plugins.org) clients | Root `plugin.json` + `mcp.json`; install from this repository URL or from the marketplace once listed |
 | Gemini CLI | `gemini extensions install https://github.com/termalinapp/termalin-plugin` |
 | Antigravity | `agy plugin install https://github.com/termalinapp/termalin-plugin` |
+| Hermes Agent | `hermes plugins install termalin`, then `hermes plugins enable termalin`; see [Hermes Agent](#hermes-agent) below for the sign-in entry |
 | Grok Build | `/plugin` marketplace, or install from this repository URL |
 | Grok, Gemini, Mistral Le Chat, Perplexity, VS Code, Zed and any other MCP client | Add a custom connector with the URL `https://termal.in/mcp` ([instructions](https://termal.in/mcp/)) |
+
+### Hermes Agent
+
+The repository root is also a portable Agent Plugins package for [Hermes Agent](https://hermes-agent.nousresearch.com): `plugin.json`, `mcp.json` and the same `skills/` folder. Hermes installs it switched off, so enable it after installing:
+
+```bash
+hermes plugins install termalin
+hermes plugins enable termalin
+```
+
+`hermes plugins install termalin` takes the pinned release from the Hermes plugin catalog; `hermes plugins install termalinapp/termalin-plugin` takes this repository directly.
+
+The package's `mcp.json` cannot run the sign-in on its own, so add the server to `~/.hermes/config.yaml` with OAuth. Keep `trust: untrusted`: an entry in `config.yaml` replaces the package's, including its trust setting, and `untrusted` makes Hermes ask before every tool that can change something on a server (`ssh_exec`, `sftp_write`, `job_start`, `data_query` with writes, backups, web links).
+
+```yaml
+mcp_servers:
+  termalin:
+    url: https://termal.in/mcp
+    auth: oauth
+    trust: untrusted
+```
+
+Then sign in and check the connection:
+
+```bash
+hermes mcp login termalin
+hermes mcp test termalin
+```
+
+The browser page lets you pick which of your enrolled servers Hermes may reach. Hermes stores and refreshes the tokens; the package holds no credentials.
 
 ## Data
 

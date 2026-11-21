@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "termalin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "SSH, SFTP, databases and monitoring for your own servers from an AI agent, keyless through the Termalin connector: run commands, read and write files, query databases, read metrics and alerts, run background jobs. Five skills teach the agent to check server health, triage alerts, run commands safely, verify deployments and query databases.",
   "author": {
     "name": "Termalin",
@@ -29,5 +29,14 @@
     "nginx",
     "logs",
     "deploy"
-  ]
+  ],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "termalin": {
+          "trust": "untrusted"
+        }
+      }
+    }
+  }
 }

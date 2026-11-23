@@ -20,7 +20,7 @@ Report in a few lines: is there a working job, when was the last good archive, h
    - `schedule` (daily by default, `hour` in UTC), `keep_last` (default 7), `destination` (one of the owner's storages, default Termalin storage).
 3. It is saved as a draft; nothing runs yet. Give the user the confirmation link from the result and say plainly what the job will back up and how often. Confirming creates the encryption key, which only the owner can do. Drafts expire after 7 days.
 
-Database dumps sign in through the local socket or the container's own settings, or through a credentials file the owner keeps on the server (`credentials_file`). Never ask for a database password in the chat and never write one into the job.
+Database dumps run on the server itself and sign in the way the database already allows there: the local socket, or the container's own settings. Never ask for a database password in the chat and never put one into the job.
 
 ## Back up now
 

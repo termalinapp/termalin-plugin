@@ -16,7 +16,7 @@ Then show the user a short plan with the steps below that apply and get a yes. S
 ## Steps
 
 1. **Updates.** `job_start` with the package manager's full upgrade (`apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y upgrade`, or `dnf -y upgrade`), then `job_status`. See the `security-updates` skill for a reboot.
-2. **A sudo user** instead of working as root. Ask for the user name. Create it (`adduser --disabled-password --gecos ""` + `usermod -aG sudo`, or `useradd -m -G wheel` on RHEL). If the user wants a password for it, call `generate_password` and set it with `chpasswd`; tell the user to store it in their password manager. Never invent or reuse a password.
+2. **A sudo user** instead of working as root. Ask for the user name. Create it (`adduser --disabled-password --gecos ""` + `usermod -aG sudo`, or `useradd -m -G wheel` on RHEL). It signs in with an SSH key; if the user also wants a password on it, they set it themselves in their own terminal.
 3. **SSH.** Before turning off password logins or root login, make sure the user has a working key for the new user (ask them to add their public key, or confirm one is in `~/.ssh/authorized_keys`). Then write a drop-in (`/etc/ssh/sshd_config.d/50-hardening.conf`), check it with `sshd -t`, and reload. Do not change the port unless asked, and don't touch the Connector's own SSH settings.
 4. **Firewall.** `ufw` (Debian/Ubuntu) or `firewalld` (RHEL). Allow SSH and the ports the user names (80, 443) first, then enable. Show the rule list.
 5. **Swap** on small servers without one: a 1–2 GB swap file, added to `/etc/fstab`.

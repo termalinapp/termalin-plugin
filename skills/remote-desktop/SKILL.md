@@ -12,7 +12,7 @@ Termalin opens remote desktops for AI through the user's Connector. The user sta
    - In the Termalin cabinet (https://termal.in/account) open Remote desktop and start a desktop for AI, or save one for AI so you can open it yourself next time.
    - The server's Connector must allow AI on remote desktops (Connector settings in the cabinet or the app).
    - Windows needs RDP turned on; Linux and Mac need a VNC server running.
-3. To open a saved desktop: `desktop_open` with `desktop`, a one-sentence `reason` the user will see, and `mode` "view" unless you have to act. Termalin signs in with the password the user saved; you never see it.
+3. To open a saved desktop: `desktop_open` with `desktop`, a one-sentence `reason` the user will see, and `mode` "view" unless you have to act. Termalin signs in with what the user saved there; you never see it.
 4. If the user has not approved your app yet, they get a request in Telegram, the phone app or the cabinet. The call waits about 50 seconds; if it says it is still waiting, tell the user to approve and call `desktop_open` again a minute later. Do not loop it.
 
 ## Work in short steps

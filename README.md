@@ -41,6 +41,23 @@ The same repository carries a manifest for each plugin format, so one install wo
 | Grok Build | `/plugin` marketplace, or install from this repository URL |
 | Grok, Gemini, Mistral Le Chat, Perplexity, VS Code, Zed and any other MCP client | Add a custom connector with the URL `https://termal.in/mcp` ([instructions](https://termal.in/mcp/)) |
 
+### Local models: LM Studio, Jan, Open WebUI, Goose, Msty, 5ire, Zed
+
+The hosted server works with any model that can call tools, including local ones. The chat runs on your machine; only the tool calls go to termal.in, which forwards them to your servers through their Connector.
+
+| App | How |
+| --- | --- |
+| LM Studio (0.3.17+) | [![Add MCP Server termalin to LM Studio](https://files.lmstudio.ai/deeplink/mcp-install-light.svg)](https://lmstudio.ai/install-mcp?name=termalin&config=eyJ1cmwiOiJodHRwczovL3Rlcm1hbC5pbi9tY3AifQ%3D%3D) or add `"termalin": {"url": "https://termal.in/mcp", "headers": {"Authorization": "Bearer <API key>"}}` to `mcp.json` (LM Studio has no OAuth sign-in, so use an API key from [termal.in/account](https://termal.in/account)) |
+| Jan | Settings → MCP Servers → add a remote server with the URL `https://termal.in/mcp`; Jan runs the OAuth sign-in itself |
+| Open WebUI (0.6.31+) | Admin → External Tools → add an **MCP (Streamable HTTP)** server with the URL `https://termal.in/mcp` and OAuth 2.1, or a Bearer header with an API key |
+| Goose | Extensions → Browse (the official MCP registry lists Termalin as `in.termal/termalin-web`), or Add custom extension → Streamable HTTP → `https://termal.in/mcp` |
+| Msty Studio | Toolbox → add an HTTP tool with the URL `https://termal.in/mcp` and OAuth or a bearer token |
+| 5ire | Marketplace → Termalin (asks for the API key), or Tools → add with the URL |
+| Zed | Agent panel → Add Remote Server → `https://termal.in/mcp`; Zed prompts for the OAuth sign-in |
+| Ollama | The Ollama app has no MCP client; run a local model through one of the apps above, or `ollama launch` Claude Code, OpenCode or Codex with Termalin installed there |
+
+An API key is bound to the servers you choose and can be read-only; it never carries an SSH key.
+
 ### Hermes Agent
 
 The repository root is also a portable Agent Plugins package for [Hermes Agent](https://hermes-agent.nousresearch.com): `plugin.json`, `mcp.json` and the same `skills/` folder. Hermes installs it switched off, so enable it after installing:

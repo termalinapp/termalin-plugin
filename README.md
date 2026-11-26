@@ -2,7 +2,7 @@
 
 Manage your own Linux servers from a conversation with Claude, ChatGPT, Cursor, Kiro, Grok Build, Gemini CLI, Antigravity or Hermes Agent: run commands over SSH, read and write files over SFTP, query databases, and watch server health and alerts — through the [Termalin](https://termal.in) connector, without pasting an SSH key or a password into the chat.
 
-This plugin bundles the Termalin MCP connector (`https://termal.in/mcp`) with five skills that teach the agent how to use it well:
+This plugin bundles the Termalin MCP connector (`https://termal.in/mcp`) with ten skills that teach the agent how to use it well:
 
 | Skill | What it does |
 | --- | --- |
@@ -39,6 +39,9 @@ The same repository carries a manifest for each plugin format, so one install wo
 | Antigravity | `agy plugin install https://github.com/termalinapp/termalin-plugin` |
 | Hermes Agent | `hermes plugins install termalin`, then `hermes plugins enable termalin`; see [Hermes Agent](#hermes-agent) below for the sign-in entry |
 | Grok Build | `/plugin` marketplace, or install from this repository URL |
+| Qwen Code | `qwen extensions install termalinapp/termalin-plugin` (reads the root `plugin.json`, `mcp.json` and the skills as an Agent Plugins v1 package) |
+| Clients that only speak stdio: CI jobs, scripts, Claude Desktop with an API key | `npx -y termalin-mcp` with `TERMALIN_API_KEY` in the environment, the open-source bridge [termalin-mcp](https://github.com/termalinapp/termalin-mcp) (MIT, npm) |
+| Any agent that uses the skills CLI ([skills.sh](https://skills.sh)) | `npx skills add termalinapp/termalin-plugin` installs the ten skills; add the MCP server by URL as below |
 | Grok, Gemini, Mistral Le Chat, Perplexity, VS Code, Zed and any other MCP client | Add a custom connector with the URL `https://termal.in/mcp` ([instructions](https://termal.in/mcp/)) |
 
 ### Local models: LM Studio, Jan, Open WebUI, Goose, Msty, 5ire, Zed
